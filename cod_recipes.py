@@ -1,18 +1,17 @@
-import os
-with open('recipes.txt', 'rt') as r:
-    cook_book = {}
-    recipe_dictionary = []
-    for i in r:
-        dish_name = i.strip()
-        dish_counter = int(r.readline())
-        ingredients = []
-        #recipe_dictionary.append(dish_name)
-        for i in range(r):
-            dish = dish_counter.readline()
-            ingredient_name, quantity, measure = dish
-            ingredients = append({ingredient_name: ingredient_name, 
-            quantity: quantity,
-            measure: measure})
-            print(ingredients)
 
-   
+with open(r'C:\Users\RSokolov\Desktop\text.txt', mode = 'rt', encoding='utf-8') as t:
+    cook_book = {}
+    for i in t:
+        food_names = i.strip()
+        food_counter = int(t.readline().strip())
+        food_name = []
+        for _ in range(food_counter):
+            tx = t.readline().strip().split('|')
+            ingredient_name, quantity, measure = tx
+            food_name.append({'ingredient_name': ingredient_name, 
+                             'quantity': quantity, 
+                             'measure': measure})
+        t.readline()
+        cook_book[food_names] = ','.join(repr(k) for k in food_name)
+        break
+print(cook_book)  
