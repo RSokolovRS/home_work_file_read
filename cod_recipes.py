@@ -10,8 +10,7 @@ with open(r'C:\Users\RSokolov\Desktop\text.txt', mode = 'rt', encoding='utf-8') 
             ingredient_name, quantity, measure = tx
             food_name.append({'ingredient_name': ingredient_name, 
                              'quantity': quantity, 
-                             'measure': measure})
+                            'measure': measure})
         t.readline()
-        cook_book[food_names] = ','.join(repr(k) for k in food_name)
-        break
-print(cook_book)  
+        cook_book = {food_names:food_name}
+        print(cook_book)
