@@ -20,9 +20,9 @@ def get_shop_list_by_dishes(dishes, person_count):
     dish_string = ', '.join(dishes)
     for k in cook_book:
         if k in dish_string:
-            for i in cook_book[k]:
-                d = i.pop('ingredient_name')
-                print(d,':', i)
-
+          for i in cook_book[k]:
+            i['quantity'] = i['quantity'] * person_count
+            d = i.pop('ingredient_name')
+            print(d,':', i)
 
 get_shop_list_by_dishes(['Запеченный картофель', 'Омлет'], 2)
